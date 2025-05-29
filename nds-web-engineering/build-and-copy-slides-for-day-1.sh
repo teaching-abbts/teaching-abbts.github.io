@@ -19,4 +19,4 @@ echo "*** Building Slides Export (PDF)..."
 pnpm run "export-$DAY"
 
 echo "*** Copying Slides Export..."
-cp --force "./slides-export-$DAY.pdf" "$WEBSITE_FOLDER/$MODULE/$DAY"
+cp --force "./slides-export-$DAY.pdf" "$WEBSITE_FOLDER/$MODULE/$DAY/slides-export.pdf"
