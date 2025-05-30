@@ -1,0 +1,1 @@
+import{c as s,o as r}from"./index-DBPaceuh.js";const _="/assets/ABB-TS-neutral-BnV-VmhX.png",a=(t,e)=>{const c=t.__vccOpts||t;for(const[n,o]of e)c[n]=o;return c},f={},i={src:_,alt:""};function l(t,e){return r(),s("img",i)}const p=a(f,[["render",l]]);export{p as default};
