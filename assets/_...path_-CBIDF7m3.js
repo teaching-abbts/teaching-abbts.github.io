@@ -1,0 +1,1 @@
+import{d as t,u as n,c as a,o,t as s,a as r}from"./index-BI4uN38H.js";const l=t({__name:"[...path]",setup(c){const{t:e}=n();return(p,u)=>(o(),a("h1",null,s(r(e)("page-not-found")),1))}});export{l as default};
