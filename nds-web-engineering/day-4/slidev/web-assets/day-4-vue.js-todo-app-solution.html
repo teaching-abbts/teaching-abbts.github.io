@@ -59,6 +59,7 @@
       }
     </style>
   </head>
+
   <body>
     <div id="app">
       <h1>My TODO App</h1>
@@ -70,10 +71,22 @@
         </div>
         <div id="tasks">
           <template v-if="todos && todos.length > 0">
-            <div v-for="(task, i) in todos" :key="i" :id="`task-${i}`" :class="{ task: true, done: task.done }">
+            <div
+              v-for="(task, i) in todos"
+              :key="i"
+              :id="`task-${i}`"
+              class="task"
+              :class="{ done: task.done }"
+            >
               <span>{{ i + 1 }}</span>
-              <input type="checkbox" :id="`task-${i}-label`" v-model="task.done" />
-              <label :for="`task-${i}-label`" class="task-title">{{ task.name }}</label>
+              <input
+                type="checkbox"
+                :id="`task-${i}-label`"
+                v-model="task.done"
+              />
+              <label :for="`task-${i}-label`" class="task-title"
+                >{{ task.name }}</label
+              >
               <button type="button" @click="deleteTask(i)">x</button>
             </div>
           </template>
