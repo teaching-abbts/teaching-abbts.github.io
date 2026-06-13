@@ -1,1 +1,0 @@
-import{_ as t,c as s,o as n,w as a,a as r,V as c}from"./index-BYdQHYmY.js";const o="/assets/ABB-TS-neutral-BnV-VmhX.png",_={};function i(l,e){return n(),s(c,{class:"flex justify-center items-center"},{default:a(()=>e[0]||(e[0]=[r("img",{src:o,alt:""},null,-1)])),_:1,__:[0]})}const m=t(_,[["render",i]]);export{m as default};
