@@ -1,0 +1,1 @@
+var e=`/nds-web-engineering/2026/chapter-3/slidev/assets/URL-BRljfuCc.png`;export{e as t};
