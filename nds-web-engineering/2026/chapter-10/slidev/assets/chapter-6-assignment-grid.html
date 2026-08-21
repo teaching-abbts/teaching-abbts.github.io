@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Übung</title>
+    <style>
+      :root {
+        --bg-1: #0b1220;
+        --bg-2: #1f2a44;
+        --panel: #f8fbff;
+        --text: #0f172a;
+        --muted: #5b6780;
+        --line: #d7e0f5;
+        --brand: #3b82f6;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", "Roboto", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at 0% 0%, #263a6b, var(--bg-1) 40%),
+          linear-gradient(160deg, var(--bg-2), var(--bg-1));
+        min-height: 100vh;
+        padding: 24px;
+      }
+
+      .app {
+        max-width: 1050px;
+        margin: 0 auto;
+        background: var(--panel);
+        border-radius: 18px;
+        padding: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+        /* TODO 1: Baue ein Seitenlayout mit Grid Areas:
+           - 2 Spalten (220px und 1fr)
+           - 3 Zeilen (auto, 1fr, auto)
+           - Bereiche: "header header" / "sidebar main" / "footer footer"
+           - mit gap */
+      }
+
+      .header,
+      .sidebar,
+      .main,
+      .footer {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #fff;
+        padding: 14px;
+      }
+
+      .header {
+        /* TODO 2a: Weisen Sie den Header einem Grid-Bereich zu */
+      }
+
+      .sidebar {
+        /* TODO 2b: Weisen Sie die Sidebar einem Grid-Bereich zu */
+      }
+
+      .main {
+        /* TODO 2c: Weisen Sie Main einem Grid-Bereich zu */
+      }
+
+      .footer {
+        /* TODO 2d: Weisen Sie Footer einem Grid-Bereich zu */
+        color: var(--muted);
+      }
+
+      .cards {
+        margin-top: 10px;
+        /* TODO 3: Karten mit Grid ausrichten:
+           - repeat(auto-fit, minmax(170px, 1fr))
+           - gap */
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: linear-gradient(170deg, #ffffff, #f3f7ff);
+        padding: 12px;
+        box-shadow: 0 10px 18px rgba(15, 23, 42, 0.08);
+      }
+
+      .card h3 {
+        margin: 0 0 8px;
+        font-size: 1rem;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .featured {
+        /* TODO 4: Diese Karte soll über 2 Spalten gehen */
+      }
+
+      .meta {
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px dashed #c9d5f0;
+        /* TODO 5 (kleiner Flexbox-Teil):
+           - display: flex
+           - Inhalt links/rechts verteilen
+           - vertikal zentrieren */
+      }
+
+      .pill {
+        font-size: 0.75rem;
+        font-weight: 700;
+        border-radius: 999px;
+        padding: 4px 8px;
+        background: #dbeafe;
+        color: #1d4ed8;
+      }
+
+      .score {
+        color: var(--brand);
+        font-weight: 700;
+      }
+
+      @media (max-width: 760px) {
+        .app {
+          grid-template-columns: 1fr;
+          grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <strong>Learning Dashboard</strong>
+      </header>
+
+      <aside class="sidebar">
+        <strong>Navigation</strong>
+        <ul>
+          <li>Übersicht</li>
+          <li>Kurse</li>
+          <li>Aufgaben</li>
+        </ul>
+      </aside>
+
+      <section class="main">
+        <h2>Module</h2>
+        <div class="cards">
+          <article class="card featured">
+            <h3>Web Engineering</h3>
+            <p>Layout-Systeme, Komponenten, State Management</p>
+            <div class="meta">
+              <span class="pill">In Bearbeitung</span>
+              <span class="score">72%</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Backend</h3>
+            <p>ASP.NET Core Grundlagen</p>
+            <div class="meta">
+              <span class="pill">Neu</span>
+              <span class="score">12%</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Testing</h3>
+            <p>Unit und Integration Tests</p>
+            <div class="meta">
+              <span class="pill">Review</span>
+              <span class="score">91%</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer class="footer">Stand: heute, 08:30 Uhr</footer>
+    </main>
+  </body>
+</html>

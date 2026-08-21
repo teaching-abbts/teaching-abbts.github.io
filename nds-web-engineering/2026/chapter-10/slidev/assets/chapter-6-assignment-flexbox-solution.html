@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Übung Lösung</title>
+    <style>
+      :root {
+        --bg-1: #101726;
+        --bg-2: #1a2540;
+        --panel: #f8faff;
+        --text: #0f172a;
+        --muted: #5b6780;
+        --accent: #3b82f6;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", "Roboto", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at 10% 0%, #24345f, var(--bg-1) 45%),
+          linear-gradient(140deg, var(--bg-2), var(--bg-1));
+        min-height: 100vh;
+        padding: 28px;
+      }
+
+      .exercise {
+        max-width: 960px;
+        margin: 0 auto;
+        background: var(--panel);
+        border-radius: 18px;
+        padding: 24px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      }
+
+      h1 {
+        margin: 0 0 6px;
+        font-size: 1.5rem;
+      }
+
+      .hint {
+        margin: 0 0 16px;
+        color: var(--muted);
+      }
+
+      .toolbar {
+        /* Header-Elemente horizontal verteilen, auch auf kleinen Breiten umbrechen */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 12px;
+        border: 1px solid #d7dff3;
+        border-radius: 12px;
+        background: #eef3ff;
+        margin-bottom: 16px;
+      }
+
+      .actions {
+        /* Buttons in eine Reihe mit konstantem Abstand */
+        display: flex;
+        gap: 8px;
+      }
+
+      button {
+        border: none;
+        border-radius: 10px;
+        padding: 8px 12px;
+        background: linear-gradient(135deg, var(--accent), #2563eb);
+        color: #fff;
+        font-weight: 600;
+      }
+
+      .cards {
+        /* Responsives Kartenband: Zeilenumbruch + gleichmaessiger Abstand */
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .card {
+        /* Karte waechst/schrumpft flexibel, bleibt aber mind. 220px breit */
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 220px;
+        background: #ffffff;
+        border: 1px solid #e4e9f8;
+        border-radius: 14px;
+        padding: 16px;
+        box-shadow: 0 10px 20px rgba(31, 41, 55, 0.08);
+      }
+
+      .badge {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 4px 8px;
+        border-radius: 999px;
+        background: #dcfce7;
+        color: #166534;
+      }
+
+      h2 {
+        margin: 10px 0 8px;
+        font-size: 1.05rem;
+      }
+
+      p {
+        margin: 0;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="exercise">
+      <h1>Flexbox Übung: Team Cards (Lösung)</h1>
+      <p class="hint">
+        Ergebnis: Toolbar mit Buttons plus responsives Kartenlayout.
+      </p>
+
+      <section class="toolbar">
+        <strong>Frontend Team</strong>
+        <div class="actions">
+          <button>Alle</button>
+          <button>Aktiv</button>
+          <button>Offline</button>
+        </div>
+      </section>
+
+      <section class="cards">
+        <article class="card">
+          <span class="badge">Online</span>
+          <h2>Ana M.</h2>
+          <p>Vue.js, Accessibility, UI-Standards</p>
+        </article>
+        <article class="card">
+          <span class="badge">Online</span>
+          <h2>Luca S.</h2>
+          <p>TypeScript, State Management, Testing</p>
+        </article>
+        <article class="card">
+          <span class="badge">Busy</span>
+          <h2>Samira K.</h2>
+          <p>Design System, Komponentenbibliothek</p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
